@@ -1,0 +1,174 @@
+/* == LAYOUT == */
+
+main {
+  min-height: 100vh;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F3E5D7;
+}
+
+.recipe {
+  width: 736px;
+  background-color: #fff;
+  padding: 40px;
+  margin: 128px auto;
+  border-radius: 24px;
+}
+
+.recipe-desc {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+hr {
+  height: 1px;
+  border: none;
+  background-color: #E3DDD7;
+}
+
+/* == TYPOGRAPHY == */
+
+@font-face {
+  font-family: 'Outfit';
+  src: url('./assets/fonts/outfit/Outfit.ttf') format('woff2')
+}
+
+@font-face {
+  font-family: 'YoungSerif';
+  src: url('./assets/fonts/young-serif/YoungSerif.ttf') format('woff2')
+}
+
+h1 {
+  font-family: 'YoungSerif';
+  font-size: 40px;
+  letter-spacing: 0px;
+  color: #312E2C;
+}
+
+h2 {
+  font-family: 'YoungSerif';
+  font-size: 28px;
+  letter-spacing: 0px;
+  color: #854632;
+}
+
+h3 {
+  font-family: 'YoungSerif';
+  font-size: 20px;
+  letter-spacing: 0px;
+  color: #7A284E;
+  margin-bottom: 16px;
+}
+
+p,
+li,
+th,
+td {
+  font-family: 'Outfit';
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0px;
+  color: #5F564D;
+}
+
+ul,
+ol {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+ul li {
+  list-style-type: disc;
+}
+
+ol li {
+  list-style-type: decimal;
+}
+
+li,
+li {
+  margin-left: 25px;
+  padding-left: 16px;
+}
+
+li::marker {
+  color: #854632;
+}
+
+ol li::marker,
+td {
+  font-weight: bold;
+}
+
+/* == HEADER == */
+
+.header-img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 40px;
+}
+
+/* == PREPARATION == */
+
+.preparation-time {
+  background-color: #FFF7FB;
+  padding: 24px;
+  border-radius: 12px;
+}
+
+/* == NUTRITION == */
+
+tr {
+  border-bottom: 1px solid #E3DDD7;
+}
+
+th {
+  padding: 12px 32px;
+}
+
+td {
+  padding: 12px 32px;
+}
+
+/* == TABLET == */
+
+@media (max-width: 768px) {
+  .recipe {
+    width: 616px;
+  }
+}
+
+/* == MOBILE == */
+
+@media (max-width: 375px) {
+  .recipe {
+    width: 375px;
+    margin: 0;
+    padding: 0;
+    border-radius: 0px;
+  }
+
+  .recipe-desc {
+    width: 100%;
+    padding: 40px 32px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  .header-img {
+    border-radius: 0;
+    margin-bottom: 0;
+  }
+}
