@@ -80,6 +80,10 @@ td {
   color: #5F564D;
 }
 
+td {
+  color: #854632;
+}
+
 ul,
 ol {
   display: flex;
