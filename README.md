@@ -22,9 +22,19 @@ The challenge is to build out this recipe page and get it looking as close to th
 
 ### Extra feature
 
+**As a** visitor of the recipe page,<br>
+**I want to** see the content appear smoothly when the page opens,<br>
+**so that** the page feels polished and easy to follow.
+
 ### Screenshot
 
+#### Design preview
+
 ![Design preview for the Recipe page coding challenge](./images/preview.jpg)
+
+#### My solution (desktop)
+
+![Screenshot of my Recipe page solution on desktop](./images/desktop-screenshot.png)
 
 ### Links
 
@@ -38,7 +48,6 @@ The challenge is to build out this recipe page and get it looking as close to th
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
-- CSS Grid
 - Mobile-first workflow
 
 ### What I learned
