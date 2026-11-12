@@ -59,9 +59,10 @@
   --font-family-young-serif: "Young Serif", serif;
   --font-family-outfit: "Outfit", sans-serif;
 
-  /* Font sizes (desktop) */
+  /* Font sizes */
 
   --font-size-preset-1: 2.5rem; /* 40px */
+  --font-size-preset-1-mobile: 2.25rem; /* 36px */
   --font-size-preset-2: 1.75rem; /* 28px */
   --font-size-preset-3: 1.25rem; /* 20px */
   --font-size-preset-4: 1rem; /* 16px */
@@ -76,4 +77,223 @@
   --spacing-500: 2.5rem; /* 40px */
   --spacing-600: 3rem; /* 48px */
   --spacing-1600: 8rem; /* 128px */
+}
+
+/* ========== BASE ========== */
+
+body {
+  font-family: var(--font-family-outfit);
+  font-size: var(--font-size-preset-4);
+  line-height: 1.5;
+  color: var(--color-stone-600);
+  background-color: var(--color-white);
+}
+
+h1,
+h2 {
+  font-weight: 400;
+  line-height: 1;
+}
+
+strong {
+  font-weight: 700;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--color-stone-150);
+}
+
+/* ========== RECIPE PAGE ========== */
+
+/* Layout */
+
+.top-image {
+  display: block;
+  width: 100%;
+  height: 10.6875rem; /* 171px */
+  object-fit: cover;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-400);
+  padding: var(--spacing-500) var(--spacing-400);
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-300);
+}
+
+.intro h1 {
+  font-family: var(--font-family-young-serif);
+  font-size: var(--font-size-preset-1-mobile);
+  color: var(--color-stone-900);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-300);
+}
+
+.section h2 {
+  font-family: var(--font-family-young-serif);
+  font-size: var(--font-size-preset-2);
+  color: var(--color-brown-800);
+}
+
+/* Preparation time box */
+
+.preparation {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-200);
+  padding: var(--spacing-300);
+  background-color: var(--color-rose-50);
+  border-radius: var(--spacing-150);
+}
+
+.preparation h2 {
+  font-size: var(--font-size-preset-3);
+  font-weight: 600;
+  color: var(--color-rose-800);
+}
+
+.preparation .list {
+  --dot-color: var(--color-rose-800);
+}
+
+/* Bullet list (dot is drawn with ::before) */
+
+.list {
+  --dot-color: var(--color-brown-800);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-100);
+  list-style: none;
+}
+
+.list li {
+  position: relative;
+  padding-left: var(--spacing-500);
+}
+
+.list li::before {
+  content: "";
+  position: absolute;
+  left: var(--spacing-100);
+  top: 50%;
+  width: 0.25rem; /* 4px */
+  height: 0.25rem; /* 4px */
+  border-radius: 50%;
+  background-color: var(--dot-color);
+  transform: translateY(-50%);
+}
+
+/* Numbered steps (number is drawn with ::before) */
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-100);
+  list-style: none;
+  counter-reset: step;
+}
+
+.steps li {
+  position: relative;
+  padding-left: var(--spacing-500);
+  counter-increment: step;
+}
+
+.steps li::before {
+  content: counter(step) ".";
+  position: absolute;
+  left: var(--spacing-100);
+  font-weight: 700;
+  color: var(--color-brown-800);
+}
+
+/* Nutrition table */
+
+.nutrition-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.nutrition-table th,
+.nutrition-table td {
+  width: 50%;
+  padding: var(--spacing-150) var(--spacing-400);
+  text-align: left;
+}
+
+.nutrition-table th {
+  font-weight: 400;
+}
+
+.nutrition-table td {
+  font-weight: 700;
+  color: var(--color-brown-800);
+}
+
+.nutrition-table tr:first-child th,
+.nutrition-table tr:first-child td {
+  padding-top: 0;
+}
+
+.nutrition-table tr:last-child th,
+.nutrition-table tr:last-child td {
+  padding-bottom: 0;
+}
+
+.nutrition-table tr + tr {
+  border-top: 1px solid var(--color-stone-150);
+}
+
+/* ========== TABLET (768px and up) ========== */
+
+@media (min-width: 48rem) {
+  body {
+    display: flex;
+    justify-content: center;
+    padding: var(--spacing-1600) var(--spacing-600);
+    background-color: var(--color-stone-100);
+  }
+
+  .card {
+    flex: 1;
+    max-width: 38.5rem; /* 616px */
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-500);
+    padding: var(--spacing-500);
+    background-color: var(--color-white);
+    border-radius: var(--spacing-300);
+  }
+
+  .top-image {
+    height: 18.75rem; /* 300px */
+    border-radius: var(--spacing-150);
+  }
+
+  .content {
+    padding: 0;
+  }
+
+  .intro h1 {
+    font-size: var(--font-size-preset-1);
+  }
+}
+
+/* ========== DESKTOP (1024px and up) ========== */
+
+@media (min-width: 64rem) {
+  .card {
+    max-width: 46rem; /* 736px */
+  }
 }
