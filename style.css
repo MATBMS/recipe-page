@@ -1,0 +1,79 @@
+/* ========== RESET ========== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ========== FONTS ========== */
+
+@font-face {
+  font-family: "Young Serif";
+  src: url("./fonts/YoungSerif-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url("./fonts/Outfit-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url("./fonts/Outfit-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url("./fonts/Outfit-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ========== CUSTOM PROPERTIES ========== */
+
+:root {
+  /* Colors */
+
+  --color-white: #ffffff;
+  --color-stone-100: #f3e5d7;
+  --color-stone-150: #e3ddd7;
+  --color-stone-600: #5f564d;
+  --color-stone-900: #312e2c;
+  --color-brown-800: #854632;
+  --color-rose-800: #7a284e;
+  --color-rose-50: #fff7fb;
+
+  /* Font families */
+
+  --font-family-young-serif: "Young Serif", serif;
+  --font-family-outfit: "Outfit", sans-serif;
+
+  /* Font sizes (desktop) */
+
+  --font-size-preset-1: 2.5rem; /* 40px */
+  --font-size-preset-2: 1.75rem; /* 28px */
+  --font-size-preset-3: 1.25rem; /* 20px */
+  --font-size-preset-4: 1rem; /* 16px */
+
+  /* Spacing */
+
+  --spacing-100: 0.5rem; /* 8px */
+  --spacing-150: 0.75rem; /* 12px */
+  --spacing-200: 1rem; /* 16px */
+  --spacing-300: 1.5rem; /* 24px */
+  --spacing-400: 2rem; /* 32px */
+  --spacing-500: 2.5rem; /* 40px */
+  --spacing-600: 3rem; /* 48px */
+  --spacing-1600: 8rem; /* 128px */
+}
