@@ -76,6 +76,38 @@ Three properties work together:
 }
 ```
 
+#### Animation fill mode
+
+I learned that `animation-fill-mode` tells the browser how an element looks before an animation starts (during its delay) and after it ends.
+
+- `backwards` applies the first keyframe during the delay. I need it so each block stays hidden until its turn, instead of showing and then disappearing when its animation starts.
+- `forwards` keeps the last keyframe after the end. I do not need it, because each block already ends in its normal state. `both` is the same as using the two together, and it would leave an empty `transform` on every block.
+
+```css
+.content > * {
+  animation: fade-slide-in 1s ease-out backwards;
+}
+```
+
+#### Hover only on devices with a mouse
+
+I learned to wrap the hover effect in `@media (hover: hover)`. On a touch screen there is no real hover, so a tap could leave the photo zoomed.
+
+```css
+@media (hover: hover) {
+  .photo:hover .top-image {
+    transform: scale(1.05);
+  }
+}
+```
+
+#### Other things I learned
+
+- **Font loading:** with `font-display: swap`, the browser shows the text right away with a fallback font and switches to my font once it is loaded, so the text is never invisible.
+- **Table accessibility:** I put `scope="row"` on a `<th>` to say that it is the header of its row. A screen reader can then link "Calories" to its value.
+- **Overriding a CSS variable:** I can define the same custom property in two rules. The more specific selector wins, and everything that reads it with `var()` follows, like the dot colors in the preparation box.
+- **Heading outline:** I use one `<h1>` for the page title and `<h2>` for its sections, like a table of contents. Screen readers and search engines use it to understand the page.
+
 ### AI Collaboration
 
 This is a project where I act as the Product Engineer, not the developer. I define the requirements and validate every decision, and Claude Code writes the code.

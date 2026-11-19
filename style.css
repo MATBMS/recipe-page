@@ -77,6 +77,11 @@
   --spacing-500: 2.5rem; /* 40px */
   --spacing-600: 3rem; /* 48px */
   --spacing-1600: 8rem; /* 128px */
+
+  /* Border radius */
+
+  --radius-sm: 0.75rem; /* 12px */
+  --radius-lg: 1.5rem; /* 24px */
 }
 
 /* ========== BASE ========== */
@@ -121,8 +126,11 @@ hr {
   transition: transform 0.4s ease;
 }
 
-.photo:hover .top-image {
-  transform: scale(1.05);
+/* Only for devices with a mouse: on touch screens a tap would leave the photo zoomed */
+@media (hover: hover) {
+  .photo:hover .top-image {
+    transform: scale(1.05);
+  }
 }
 
 .content {
@@ -164,7 +172,7 @@ hr {
   gap: var(--spacing-200);
   padding: var(--spacing-300);
   background-color: var(--color-rose-50);
-  border-radius: var(--spacing-150);
+  border-radius: var(--radius-sm);
 }
 
 .preparation h2 {
@@ -283,7 +291,7 @@ hr {
 
 .photo,
 .content > * {
-  animation: fade-slide-in 1s ease-out both;
+  animation: fade-slide-in 1s ease-out backwards;
 }
 
 /* Delay of each block, from top to bottom (the lines are blocks too) */
@@ -349,11 +357,11 @@ hr {
     gap: var(--spacing-500);
     padding: var(--spacing-500);
     background-color: var(--color-white);
-    border-radius: var(--spacing-300);
+    border-radius: var(--radius-lg);
   }
 
   .photo {
-    border-radius: var(--spacing-150);
+    border-radius: var(--radius-sm);
   }
 
   .top-image {
